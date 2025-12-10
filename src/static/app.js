@@ -49,6 +49,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Handle form submission
+
+  // Handle delete button click
+  activitiesList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('delete-btn')) {
+      const email = event.target.dataset.email;
+      // Logic to unregister participant
+      console.log(`Unregistering participant: ${email}`);
+      // Add your unregister logic here
+    }
+  });
+
+  // Handle delete button click
+  activitiesList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('delete-btn')) {
+      const email = event.target.dataset.email;
+      // Logic to unregister participant
+      console.log(`Unregistering participant: ${email}`);
+      // Add your unregister logic here
+    }
+  });
   signupForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -69,6 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.textContent = result.message;
         messageDiv.className = "success";
         signupForm.reset();
+        // Refresh activities list to show updated participants
+        fetchActivities();
       } else {
         messageDiv.textContent = result.detail || "An error occurred";
         messageDiv.className = "error";

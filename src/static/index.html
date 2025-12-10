@@ -16,6 +16,7 @@
       <section id="activities-container">
         <h3>Available Activities</h3>
         <div id="activities-list">
+          <ul class="participants-list">${details.participants.map(p => `<li>${p} <button class='delete-btn' data-email='${p}'>🗑️</button></li>`).join("")}</ul>
           <!-- Activities will be loaded here -->
           <p>Loading activities...</p>
         </div>
